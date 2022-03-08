@@ -1,0 +1,46 @@
+* {
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.Header_Parent_Container {
+    width: 101%;
+    position: fixed;
+    top: 0px;
+    overflow-x: hidden;
+    z-index: 2;
+    background-color: rgb(27, 31, 40);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.Header_Parent_Container h1{
+    align-items: center;
+    color: white;
+    font-weight: lighter;
+    font-size: 35px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.BlogPostParentContainer {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    min-height: 1000px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.BlogContainer {
+    width: 60%;
+    background-color: rgb(27, 31, 40);
+    margin-top: 20px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
