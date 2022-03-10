@@ -5,11 +5,12 @@ import BlogPost from '../models/BlogPost.js';
 
 const router = express.Router();
 
+
 export const getBlogPosts = async (req, res) => { 
     try {
-        const BlogPost = await BlogPost.find();
-                
-        res.status(200).json(BlogPost);
+        const BlogPosts = await BlogPost.find();
+        res.status(200).json(BlogPosts);
+
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
@@ -43,3 +44,14 @@ export const updateBlogPost = async (req, res) => {
     res.json(updatedBlogPost);
 }
 
+export const getBlogPostFromId = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const BlogPosts = await BlogPost.findById(id);
+        //console.log(BlogPost)
+        res.status(200).json(BlogPosts);
+
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
