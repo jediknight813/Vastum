@@ -15,21 +15,31 @@ const BlogPostParent = () => {
         dispatch(getBlogPosts());
     },[Blogposts, dispatch])
 
-    console.log(Blogposts)
-
-    return(
-        <div className="BlogPostParentContainer">
-            <div className="BlogContainer">
-            {Blogposts.map((BlogData) => (
-                <div  onClick={() => navigate(`/blog_post/${BlogData._id}`)}className="blog_post_clickible_parent">
-                    <img alt="blog img" src={BlogData.selectedFile} />
-                    <h1>{BlogData.title}</h1>
-                    <h2> made by {BlogData.creator}</h2>
+    //console.log(Blogposts)
+    if (Array.isArray(Blogposts) === true ) {
+        return(
+            <div className="BlogPostParentContainer">
+                <div className="BlogContainer">
+                {Blogposts.map((BlogData) => (
+                    <div  onClick={() => navigate(`/blog_post/${BlogData._id}`)}className="blog_post_clickible_parent">
+                        <img alt="blog img" src={BlogData.selectedFile} />
+                        <h1>{BlogData.title}</h1>
+                        <h2> made by {BlogData.creator}</h2>
+                    </div>
+                 ))}
                 </div>
-             ))}
             </div>
-        </div>
-    )
+        )
+    }
+    else {
+        return(
+            <div className="BlogPostParentContainer">
+                <div className="BlogContainer">
+                    <h1> Loading... </h1>
+                </div>
+            </div>
+        )
+    }
 }
 
 
