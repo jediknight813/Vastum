@@ -28,6 +28,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Header />
           <Routes>
+            <Route path="/" element={<BlogPostParent />} />
             <Route path="/home" element={<BlogPostParent />} />
             <Route path="/new_blog_post" element={<CreateBlogPost />} />
             <Route path="/blog_post/:id" element={<BlogPost /> } />

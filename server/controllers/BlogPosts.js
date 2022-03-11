@@ -9,6 +9,7 @@ const router = express.Router();
 export const getBlogPosts = async (req, res) => { 
     try {
         const BlogPosts = await BlogPost.find();
+        //console.log("here")
         res.status(200).json(BlogPosts);
 
     } catch (error) {

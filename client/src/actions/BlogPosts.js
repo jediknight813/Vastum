@@ -17,7 +17,7 @@ export const getBlogPosts = () =>  async (dispatch) => {
 export const createBlogPost = (post) => async (dispatch) => {
     try {
       const { data } = await api.createBlogPost(post);
-      console.log(data)
+      //console.log(data)
       dispatch({ type: ADD_BLOG_POST, payload: data });
 
     } catch (error) {
@@ -28,7 +28,7 @@ export const createBlogPost = (post) => async (dispatch) => {
   export const updateBlogPost = (id, post) => async (dispatch) => {
     try {
         const { data } = await api.updateBlogPost(id, post);
-        console.log(data)
+        //console.log(data)
         dispatch({ type: UPDATE, payload: data });
     } catch (error) {
       console.log(error);
